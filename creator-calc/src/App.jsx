@@ -1161,22 +1161,17 @@ function App() {
 
       </main>
 
-      {/* FOOTER */}
-
       <footer>
 
         <strong>
           CreatorCalc
         </strong>
-
         <span>
           Estimates, not financial guarantees.
         </span>
-
         <span>
           Built for creators 🚀
         </span>
-
       </footer>
 
     </div>
