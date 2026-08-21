@@ -141,11 +141,6 @@ function App() {
 
     const affiliateMax =
       adRevenueMax * 0.15;
-
-    /*
-      Membership estimate
-    */
-
     const membershipMin =
       adRevenueMin * 0.02;
 
