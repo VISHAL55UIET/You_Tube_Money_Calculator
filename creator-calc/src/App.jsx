@@ -138,25 +138,13 @@ function App() {
         : views * nicheData.sponsorRate * 0.00025;
     const affiliateMin =
       adRevenueMin * 0.08;
-
     const affiliateMax =
       adRevenueMax * 0.15;
     const membershipMin =
       adRevenueMin * 0.02;
-
     const membershipMax =
       adRevenueMax * 0.06;
-
-    /*
-      Total creator income range
-    */
-
-    const totalMin =
-      adRevenueMin +
-      sponsorshipMin +
-      affiliateMin +
-      membershipMin;
-
+    const totalMin =adRevenueMin +sponsorshipMin +affiliateMin +membershipMin;
     const totalMax =
       adRevenueMax +
       sponsorshipMax +
