@@ -112,11 +112,6 @@ function App() {
   const [country, setCountry] = useState("India");
   const [goal, setGoal] = useState(100000);
   const [activeTab, setActiveTab] = useState("calculator");
-
-  /* ------------------------------------------------ */
-  /* CALCULATIONS */
-  /* ------------------------------------------------ */
-
   const results = useMemo(() => {
     const nicheData = NICHES[niche];
     const countryMultiplier = COUNTRIES[country];
@@ -141,11 +136,6 @@ function App() {
       type === "Shorts"
         ? views * nicheData.sponsorRate * 0.00012
         : views * nicheData.sponsorRate * 0.00025;
-
-    /*
-      Affiliate estimate
-    */
-
     const affiliateMin =
       adRevenueMin * 0.08;
 
