@@ -156,39 +156,19 @@ function App() {
 
   const results = useMemo(() => {
     const nicheData = NICHES[niche];
-
     const countryMultiplier = COUNTRIES[country];
-
     let minRPM =
       nicheData.minRPM * countryMultiplier;
-
     let maxRPM =
       nicheData.maxRPM * countryMultiplier;
-
-    /*
-      Shorts usually have much lower RPM.
-    */
-
     if (type === "Shorts") {
       minRPM *= 0.08;
       maxRPM *= 0.08;
     }
-
-    /*
-      YouTube Ads
-    */
-
     const adRevenueMin =
       (views / 1000) * minRPM;
-
     const adRevenueMax =
       (views / 1000) * maxRPM;
-
-    /*
-      Sponsorship estimate.
-      This is NOT YouTube/AdSense revenue.
-    */
-
     const sponsorshipMin =
       type === "Shorts"
         ? views * nicheData.sponsorRate * 0.00004
@@ -872,11 +852,7 @@ function App() {
                 />
 
               </div>
-
-              {/* STATS */}
-
               <div className="stats-grid">
-
                 <StatCard
                   title="Revenue / Video"
                   value={`${formatINR(
@@ -888,7 +864,6 @@ function App() {
                   )}`}
                   icon="🎬"
                 />
-
                 <StatCard
                   title="Revenue / 100K Views"
                   value={`${formatINR(
@@ -902,7 +877,6 @@ function App() {
                   )}`}
                   icon="📈"
                 />
-
                 <StatCard
                   title="Annual Potential"
                   value={`${formatINR(
