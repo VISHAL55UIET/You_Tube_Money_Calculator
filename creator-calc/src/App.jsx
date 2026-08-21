@@ -32,44 +32,32 @@ const NICHES = {
     maxRPM: 9,
     sponsorRate: 1.2,
   },
-
   Business: {
     minRPM: 5,
     maxRPM: 14,
     sponsorRate: 1.6,
   },
-
   Gaming: {
     minRPM: 1,
     maxRPM: 5,
     sponsorRate: 0.8,
   },
-
   Lifestyle: {
     minRPM: 2,
     maxRPM: 7,
     sponsorRate: 0.9,
   },
-
   Entertainment: {
     minRPM: 1,
     maxRPM: 4,
     sponsorRate: 0.7,
   },
-
   "Health & Fitness": {
     minRPM: 3,
     maxRPM: 8,
     sponsorRate: 1.1,
   },
 };
-
-/*
-  Country multiplier.
-
-  These are broad estimation multipliers.
-*/
-
 const COUNTRIES = {
   India: 0.35,
   USA: 1,
@@ -80,74 +68,49 @@ const COUNTRIES = {
   "United Arab Emirates": 0.7,
   Singapore: 0.75,
 };
-
-/* ------------------------------------------------ */
-/* FORMATTERS */
-/* ------------------------------------------------ */
-
 const formatINR = (value) => {
   if (!Number.isFinite(value)) return "₹0";
-
   return new Intl.NumberFormat("en-IN", {
     style: "currency",
     currency: "INR",
     maximumFractionDigits: 0,
   }).format(value);
 };
-
 const formatNumber = (value) => {
   if (!Number.isFinite(value)) return "0";
-
   return new Intl.NumberFormat("en-IN", {
     maximumFractionDigits: 0,
   }).format(value);
 };
-
 const formatCompact = (value) => {
   if (!Number.isFinite(value)) return "0";
-
   if (value >= 1_000_000_000_000) {
     return `${(value / 1_000_000_000_000).toFixed(1)}T`;
   }
-
   if (value >= 1_000_000_000) {
     return `${(value / 1_000_000_000).toFixed(1)}B`;
   }
-
   if (value >= 1_000_000) {
     return `${(value / 1_000_000).toFixed(1)}M`;
   }
-
   if (value >= 1_000) {
     return `${(value / 1_000).toFixed(1)}K`;
   }
-
   return `${Math.round(value)}`;
 };
-
 const clampPercentage = (value) => {
   if (!Number.isFinite(value)) return 0;
 
   return Math.min(Math.max(value, 0), 100);
 };
 
-/* ------------------------------------------------ */
-/* APP */
-/* ------------------------------------------------ */
-
 function App() {
   const [views, setViews] = useState(100000);
-
   const [videos, setVideos] = useState(8);
-
   const [type, setType] = useState("Long-form");
-
   const [niche, setNiche] = useState("Technology");
-
   const [country, setCountry] = useState("India");
-
   const [goal, setGoal] = useState(100000);
-
   const [activeTab, setActiveTab] = useState("calculator");
 
   /* ------------------------------------------------ */
