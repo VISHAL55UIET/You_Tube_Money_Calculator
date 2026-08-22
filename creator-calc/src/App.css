@@ -753,9 +753,7 @@ button {
   transition: width 0.5s;
 }
 
-/* =========================================
-   STATS
-========================================= */
+
 
 .stats-grid {
   display: grid;
@@ -873,9 +871,6 @@ button {
   text-align: right;
 }
 
-/* =========================================
-   GOAL CALCULATOR
-========================================= */
 
 .goal-container {
   max-width: 850px;
